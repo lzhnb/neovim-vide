@@ -1,7 +1,11 @@
 local config = {}
 
 function config.telescope()
-	telescope.setup {
+	if not packer_plugins["plenary.nvim"].loaded then
+    	vim.cmd [[packadd plenary.nvim]]
+  	    print("open plenary")
+    end	
+    telescope.setup {
 		defaults = {
 			vimgrep_arguments = {
 				"rg",

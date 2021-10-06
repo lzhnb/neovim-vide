@@ -2,6 +2,11 @@
 
 learning operations please refer to [vim-vide](https://github.com/lzhnb/vim-vide)
 
+Contents
+===
+
+[toc]
+
 ## Installation
 ```
 git clone --depth 1 https://github.com/lzhnb/neovim-vide ~/.config/nvim
@@ -109,6 +114,10 @@ We disable the autocompletion of `jedi-vim`.
 | `gcc`   | comment/uncomment current line(Normal mode) |
 | `gc`    | comment/uncomment selection (Visual mode)   |
 | `gcip`  | comment/uncomment a paragraph               |
+
+## Acknowledge
+[bilibili/vim-vide](https://github.com/bilibili/vim-vide)
+[ayamir/nvimdots](https://github.com/ayamir/nvimdots)
 
 TODO
 

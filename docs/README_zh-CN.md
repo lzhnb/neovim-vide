@@ -2,12 +2,18 @@
 
 操作学习可参考 [vim-vide](https://github.com/lzhnb/vim-vide)
 
+目录
+===
+
+[toc]
+
+
 ## 安装
 ```
 git clone --depth 1 https://github.com/lzhnb/neovim-vide ~/.config/nvim
 ```
 
-## Vim 操作
+## Vim操作
 - 命令行运行 `vimtutor` 学习 vim 的基础操作
 - 在 `vim/neovim` 运行 `:h` 阅读文档
 
@@ -109,6 +115,10 @@ coc-pyright
 | `gcc`  | 注释/解除注释当前行(普通模式下)           |
 | `gc`   | 注释/解除注释当前选中内容(可视多选模式下) |
 | `gcip` | 注释/解除注释当前所在段落                 |
+
+## 答谢
+[bilibili/vim-vide](https://github.com/bilibili/vim-vide)
+[ayamir/nvimdots](https://github.com/ayamir/nvimdots)
 
 TODO
 

@@ -2,10 +2,31 @@
 
 learning operations please refer to [vim-vide](https://github.com/lzhnb/vim-vide)
 
-Contents
-===
 
-[toc]
+<details>
+<summary>Contents</summary>
+
+<!-- vim-markdown-toc GFM -->
+
+- [nvim-vide(Developing)](#nvim-videdeveloping)
+  - [Installation](#installation)
+  - [Vim Operation](#vim-operation)
+    - [cursor goto(Normal mode)](#cursor-gotonormal-mode)
+    - [Copy/Paste](#copypaste)
+    - [Undo/Redo](#undoredo)
+    - [Replace](#replace)
+    - [Visual mode](#visual-mode)
+    - [Folding](#folding)
+  - [Coc](#coc)
+  - [Completion Operations](#completion-operations)
+  - [Python Setting](#python-setting)
+  - [hot key setting](#hot-key-setting)
+  - [Plugins setting](#plugins-setting)
+    - [nvim-comment](#nvim-comment)
+  - [Acknowledge](#acknowledge)
+
+<!-- vim-markdown-toc -->
+</details>
 
 ## Installation
 ```

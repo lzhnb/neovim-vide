@@ -2,10 +2,31 @@
 
 操作学习可参考 [vim-vide](https://github.com/lzhnb/vim-vide)
 
-目录
-===
 
-[toc]
+<details>
+<summary>目录</summary>
+
+<!-- vim-markdown-toc GFM -->
+
+- [nvim-vide(开发中)](#nvim-vide开发中)
+	- [安装](#安装)
+	- [Vim操作](#vim操作)
+		- [光标跳转(普通模式下常用)](#光标跳转普通模式下常用)
+		- [复制/粘贴](#复制粘贴)
+		- [撤回/重做](#撤回重做)
+		- [替换](#替换)
+		- [Visual 模式操作](#visual-模式操作)
+		- [代码折叠](#代码折叠)
+	- [COC](#coc)
+	- [补全事项](#补全事项)
+	- [Python 设置](#python-设置)
+	- [快捷键设置](#快捷键设置)
+	- [插件设置](#插件设置)
+		- [nvim-comment操作命令](#nvim-comment操作命令)
+	- [答谢](#答谢)
+
+<!-- vim-markdown-toc -->
+</details>
 
 
 ## 安装

@@ -39,6 +39,7 @@ function Packer:load_packer()
         compile_path = packer_compiled,
         git = {
             clone_timeout = 60,
+            default_url_format = "https://github.com.cnpmjs.org/%s"
         },
         disable_commands = true,
         display = {

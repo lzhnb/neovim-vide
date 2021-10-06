@@ -2,10 +2,18 @@ local ui = {}
 local cfg = require("modules.ui.config")
 
 ui["navarasu/onedark.nvim"] = {
-    config = [[vim.cmd("colorscheme onedark")]]
+    opt = true,
+    event = "BufWinEnter",
+    config = [[vim.cmd("colorscheme onedark")]],
 }
 
 ui["kyazdani42/nvim-web-devicons"] = {opt = false}
+
+ui["glepnir/dashboard-nvim"] = {
+    opt = true,
+    event = "BufWinEnter",
+    config = cfg.dashboard,
+}
 
 ui["romgrk/barbar.nvim"] = {
     opt = true,

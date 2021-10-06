@@ -1,18 +1,18 @@
 -- mapping
-local function map(mode, lhs, rhs, opts)
-  	local options = {noremap = true}
-  	if opts then options = vim.tbl_extend("force", options, opts) end
-  	vim.api.nvim_set_keymap(mode, lhs, rhs, options)
-end
+local bind = require("core.bind")
+local map = bind.map
 
-local opts = {noremap=true, silent=true}
+local keymap = {
+    ["n|<F3>"] = map(":set hlsearch!<CR>"):with_noremap():with_silent(),
+    ["n|<F4>"] = map(":set paste!<CR>"):with_noremap():with_silent(),
+    ["n|<C-J>"] = map(":bnext<CR>"):with_noremap():with_silent(),
+    ["n|<C-K>"] = map(":bprev<CR>"):with_noremap():with_silent(),
+    ["n|<C-D>"] = map(":bdelete<CR>"):with_noremap():with_silent(),
+    ["n|<C-N>"] = map(":NvimTreeToggle<CR>"):with_noremap():with_silent(),
+}
 
-map("n", "<F3>", ":set hlsearch!<CR>", opts)
-map("n", "<F4>", ":set paste!<CR>", opts)
-map("n", "<C-K>", ":bnext<CR>", opts)
-map("n", "<C-J>", ":bprev<CR>", opts)
-map("n", "<C-D>", ":bdelete<CR>", opts)
-map("n", "<C-N>", ":NvimTreeToggle<CR>", opts)
-vim.cmd [[nmap <leader>g[ <Plug>(coc-git-prevchunk)]]
-vim.cmd [[nmap <leader>g] <Plug>(coc-git-nextchunk)]]
+bind.nvim_load_mapping(keymap)
+
+-- vim.cmd [[nmap <leader>g[ <Plug>(coc-git-prevchunk)]]
+-- vim.cmd [[nmap <leader>g] <Plug>(coc-git-nextchunk)]]
 

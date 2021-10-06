@@ -5,7 +5,7 @@ ui["navarasu/onedark.nvim"] = {
     config = [[vim.cmd("colorscheme onedark")]]
 }
 
-ui["nvim-web-devicons"] = {}
+ui["nvim-web-devicons"] = {opt = false}
 
 ui["romgrk/barbar.nvim"] = {
     opt = true,
@@ -19,7 +19,8 @@ ui["hoob3rt/lualine.nvim"] = {
 }
 
 ui["kyazdani42/nvim-tree.lua"] = {
-  	-- cmd = "NvimTreeToggle",
+  	opt = true,
+    cmd = "NvimTreeToggle",
   	config = cfg.nvim_tree,
 }
 

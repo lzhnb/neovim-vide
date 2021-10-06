@@ -24,11 +24,5 @@ editor["JoosepAlviste/nvim-ts-context-commentstring"] = {
     after = "nvim-treesitter"
 }
 
-editor["SmiteshP/nvim-gps"] = {
-    opt = true,
-    after = "nvim-treesitter",
-    config = cfg.nvim_gps,
-}
-
 return editor
 

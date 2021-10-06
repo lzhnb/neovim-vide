@@ -38,11 +38,7 @@ function Packer:load_packer()
     packer.init({
         compile_path = packer_compiled,
         git = {
-            subcommands = {
-                update = "pull"
-            },
             clone_timeout = 60,
-            -- default_url_format = 'git@github:%s.git'
         },
         disable_commands = true,
         display = {

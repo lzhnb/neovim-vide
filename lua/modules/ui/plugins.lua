@@ -5,7 +5,7 @@ ui["navarasu/onedark.nvim"] = {
     config = [[vim.cmd("colorscheme onedark")]]
 }
 
-ui["nvim-web-devicons"] = {opt = false}
+ui["kyazdani42/nvim-web-devicons"] = {opt = false}
 
 ui["romgrk/barbar.nvim"] = {
     opt = true,
@@ -14,7 +14,7 @@ ui["romgrk/barbar.nvim"] = {
 
 ui["hoob3rt/lualine.nvim"] = {
     opt = true,
-	after = "nvim-gps",
+	event = "BufRead",
     config = cfg.lualine,
 }
 

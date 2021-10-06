@@ -12,11 +12,6 @@ tools["dstein64/vim-startuptime"] ={
     cmd = "StartupTime",
 }
 
-tools["tpope/vim-commentary"] = {
-    opt = true,
-    cmd = {"gc", "gcc"},
-}
-
 tools["folke/which-key.nvim"] = {
     opt = true,
     keys = "\\",

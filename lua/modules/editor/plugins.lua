@@ -10,5 +10,25 @@ editor["nvim-telescope/telescope.nvim"] = {
     },
 }
 
+editor["terrortylor/nvim-comment"] = {
+    opt = false,
+    config = function() require("nvim_comment").setup({
+        hook = function()
+            require("ts_context_commentstring.internal").update_commentstring()
+        end,
+    }) end
+}
+
+editor["JoosepAlviste/nvim-ts-context-commentstring"] = {
+    opt = true,
+    after = "nvim-treesitter"
+}
+
+editor["SmiteshP/nvim-gps"] = {
+    opt = true,
+    after = "nvim-treesitter",
+    config = cfg.nvim_gps,
+}
+
 return editor
 

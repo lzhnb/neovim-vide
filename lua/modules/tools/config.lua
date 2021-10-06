@@ -16,7 +16,7 @@ end
 function config.which_key()
 	local wk = require("which-key")
 
-	local wk_mappings = {
+	local normal_mappings = {
 		-- file operation mapping
 		f = {
 			name = "file-telescope", -- optional group name
@@ -30,17 +30,36 @@ function config.which_key()
 		},
 		g = {
 			name = "git",
-			h = {":CocCommand git.chunkInfo<CR>", "Info Hunk"},    -- show the git hunk information
-			s = {":CocCommand git.chunkStage<CR>", "Stage Hunk"},  -- save the hunk change
-			u = {":CocCommand git.chunkUndo<CR>", "Undo Hunk"},    -- undo the hunk
-			c = {":CocCommand git.showCommit<CR>", "Show Commit"},  -- show commit information
-		},
-		v = {":Vista!!<CR>", "Tagbar"} -- using vista to realize tag bar
+			h = {":CocCommand git.chunkInfo<CR>", "Info Hunk"},
+			s = {":CocCommand git.chunkStage<CR>", "Stage Hunk"},
+			u = {":CocCommand git.chunkUndo<CR>", "Undo Hunk"},
+			c = {":CocCommand git.showCommit<CR>", "Show Commit"},
+            b = {":Telescope git_branches<CR>", "Checkout branch(Telescope)"},
+            o = {":Telescope git_status<CR>", "Open changed file(Telescope)"},
+            c = {":Telescope git_commits<CR>", "Checkout commit(Telescope)"},
+            C = {":Telescope git_bcommits<CR>", "Checkout commit(Telescope for current file)"}
+        },
+        p = {
+            name = "Packer",
+            c = {":PackerCompile<CR>", "Compile"},
+            i = {":PackerInstall<CR>", "Install"},
+            s = {":PackerSync<CR>", "Sync"},
+            S = {":PackerStatus<CR>", "Status"},
+            u = {":PackerUpdate<CR>", "Update"}
+        },
+		v = {":Vista!!<CR>", "Tagbar"}, -- using vista to realize tag bar
 	}
 
-	local wk_opts = {prefix = "<leader>"}
+	local normal_opts = {
+        mode = "n",          -- NORMAL mode
+        prefix = "<leader>", -- `\` launch
+        buffer = nil,        -- Global mappings. Specify a buffer number for buffer local mappings
+        silent = true,       -- use `silent` when creating keymaps
+        noremap = true,      -- use `noremap` when creating keymaps
+        nowait = true,       -- use `nowait` when creating keymaps
+    }
 
-	wk.register(wk_mappings, wk_opts)
+	wk.register(normal_mappings, normal_opts)
 end
 
 return config

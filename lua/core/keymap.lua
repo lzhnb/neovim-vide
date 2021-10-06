@@ -13,6 +13,6 @@ map("n", "<C-K>", ":bnext<CR>", opts)
 map("n", "<C-J>", ":bprev<CR>", opts)
 map("n", "<C-D>", ":bdelete<CR>", opts)
 map("n", "<C-N>", ":NvimTreeToggle<CR>", opts)
-
-
+vim.cmd [[nmap <leader>g[ <Plug>(coc-git-prevchunk)]]
+vim.cmd [[nmap <leader>g] <Plug>(coc-git-nextchunk)]]
 

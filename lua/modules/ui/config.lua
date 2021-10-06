@@ -88,6 +88,7 @@ function config.nvim_tree()
 end
 
 function config.lualine()
+    local gps = require("nvim-gps")
 	require("lualine").setup {
 		options = {
 			theme = "onedark",
@@ -101,6 +102,10 @@ function config.lualine()
 				{"diff"},
 				{"vim.b.vista_nearest_method_or_function"},
 			},
+            lualine_c = {
+                {"filename"},
+                {gps.get_location, condition = gps.is_available}
+            },
 			-- lualine_c = {"vim.b.vista_nearest_method_or_function"},
 			lualine_y = {"progress"},
 			lualine_z = {"location"}

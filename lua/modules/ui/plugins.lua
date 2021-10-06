@@ -7,9 +7,14 @@ ui["navarasu/onedark.nvim"] = {
 
 ui["nvim-web-devicons"] = {}
 
-ui["romgrk/barbar.nvim"] = {}
+ui["romgrk/barbar.nvim"] = {
+    opt = true,
+    event = "BufRead",
+}
 
 ui["hoob3rt/lualine.nvim"] = {
+    opt = true,
+	after = "nvim-gps",
     config = cfg.lualine,
 }
 

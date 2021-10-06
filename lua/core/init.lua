@@ -1,4 +1,4 @@
-require("core.mapping")
+require("core.keymap")
 
 -- set vim options
 local vimrc = require("core.vimrc")

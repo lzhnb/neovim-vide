@@ -18,9 +18,9 @@ git clone --depth 1 https://github.com/lzhnb/neovim-vide ~/.config/nvim
 | `G`        | Last line                          |
 | `:n`       | `n`-th line                        |
 | `n`        | `n`-th line after the current line |
-| `0`/`|`    | head of the current line           |
+| `0`/`\|`    | head of the current line           |
 | `$`        | tail of the current line           |
-| `n|`/`0nl` | `n`-column of the current line     |
+| `n\|`/`0nl` | `n`-column of the current line     |
 
 ### Copy/Paste
 | hot key  | function                     |

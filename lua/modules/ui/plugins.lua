@@ -11,7 +11,7 @@ ui["kyazdani42/nvim-web-devicons"] = {opt = false}
 
 ui["glepnir/dashboard-nvim"] = {
     opt = true,
-    event = "BufWinEnter",
+    -- event = "BufWinEnter",
     config = cfg.dashboard,
 }
 

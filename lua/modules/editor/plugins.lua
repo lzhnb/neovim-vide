@@ -4,6 +4,7 @@ local cfg = require("modules.tools.config")
 editor["nvim-telescope/telescope.nvim"] = {
     opt = true,
     cmd = "Telescope",
+    after = "dashboard-nvim",
     config = cfg.telescope,
     requires = {
         {"nvim-lua/plenary.nvim", opt = true}

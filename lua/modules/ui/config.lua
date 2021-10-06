@@ -96,17 +96,17 @@ end
 function config.dashboard()
     vim.g.dashboard_default_executive = "telescope"
     vim.g.dashboard_custom_section = {
-        change_colorscheme = {
-            description = {" Scheme change              comma s c "},
-            command = "DashboardChangeColorscheme"
-        },
+        -- change_colorscheme = {
+        --     description = {" Scheme change              comma s c "},
+        --     command = "DashboardChangeColorscheme"
+        -- },
         find_frecency = {
             description = {" File frecency              comma f r "},
             command = "Telescope frecency"
         },
         find_history = {
             description = {" File history               comma f e "},
-            command = "DashboardFindHistory"
+            command = "Telescope find_files"
         },
         find_project = {
             description = {" Project find               comma f p "},
@@ -114,7 +114,7 @@ function config.dashboard()
         },
         find_file = {
             description = {" File find                  comma f f "},
-            command = "DashboardFindFile"
+            command = "Telescope find_files"
         },
         file_new = {
             description = {" File new                   comma f n "},
@@ -122,7 +122,7 @@ function config.dashboard()
         },
         find_word = {
             description = {" Word find                  comma f w "},
-            command = "DashboardFindWord"
+            command = "Telescope live_grep"
         }
     }
 end

@@ -93,7 +93,7 @@ function config.lualine()
 	}
 end
 
-function config.nvim_bufferline()
+function config.bufferline()
     require("bufferline").setup {
         options = {
             modified_icon = "✥",

@@ -25,13 +25,15 @@ ui["lewis6991/gitsigns.nvim"] = {
     opt = true,
     event = {"BufRead", "BufNewFile"},
     config = cfg.gitsigns,
-    requires = {"nvim-lua/plenary.nvim", opt = true}
+    requires = {"nvim-lua/plenary.nvim", opt = true},
+    disable = not active.gitsigns,
 }
 
 ui["akinsho/bufferline.nvim"] = {
     opt = true,
     event = "BufRead",
-    config = cfg.nvim_bufferline 
+    config = cfg.bufferline,
+    disable = not active.bufferline,
 }
 
 ui["hoob3rt/lualine.nvim"] = {

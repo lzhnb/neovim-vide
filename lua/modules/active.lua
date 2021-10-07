@@ -4,7 +4,8 @@ local active = {
     onedark = true,
     web_devicons = true,
     dashboard = false,
-    barbar = true,
+    bufferline = true,
+    gitsigns = true,
     lualine = true,
     tree = true,
     -- editor

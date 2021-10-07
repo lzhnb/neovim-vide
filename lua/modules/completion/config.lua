@@ -5,7 +5,6 @@ function config.coc()
 	vim.g.coc_global_extensions = {
 		"coc-snippets",
 		"coc-highlight",
-		"coc-git",
 		"coc-yaml",
 		"coc-sh",
 		"coc-pyright",

@@ -25,9 +25,5 @@
             "flake8Enabled": false
         }
     },
-    "git": {
-        "addGBlameToVirtualText": true,
-        "addGBlameToBufferVar": true
-    }
 }
 

@@ -21,15 +21,22 @@ ui["glepnir/dashboard-nvim"] = {
     disable = not active.dashboard,
 }
 
+ui["lewis6991/gitsigns.nvim"] = {
+    opt = true,
+    event = {"BufRead", "BufNewFile"},
+    config = cfg.gitsigns,
+    requires = {"nvim-lua/plenary.nvim", opt = true}
+}
+
 ui["romgrk/barbar.nvim"] = {
     opt = true,
-    event = "BufRead",
+    event = {"BufRead", "BufNewFile"},
     disable = not active.barbar,
 }
 
 ui["hoob3rt/lualine.nvim"] = {
     opt = true,
-	event = "BufRead",
+	event = {"BufRead", "BufNewFile"},
     config = cfg.lualine,
     disable = not active.lualine,
 }

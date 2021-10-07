@@ -3,7 +3,7 @@ local active = {
     -- ui
     onedark = true,
     web_devicons = true,
-    dashboard = true,
+    dashboard = false,
     barbar = true,
     lualine = true,
     tree = true,

@@ -93,13 +93,32 @@ function config.lualine()
 	}
 end
 
+function config.gitsigns()
+    if not packer_plugins["plenary.nvim"].loaded then
+        vim.cmd [[packadd plenary.nvim]]
+    end
+    require("gitsigns").setup {
+        signs = {
+            add = {hl = "GitGutterAdd", text = "▋"},
+            change = {hl = "GitGutterChange", text = "▋"},
+            delete = {hl = "GitGutterDelete", text = "▋"},
+            topdelete = {hl = "GitGutterDeleteChange", text = "▔"},
+            changedelete = {hl = "GitGutterChange", text = "▎"}
+        },
+        watch_gitdir = {interval = 1000, follow_files = true},
+        current_line_blame = true,
+        current_line_blame_opts = {delay = 500, virtual_text_pos = "eol"},
+        sign_priority = 6,
+        update_debounce = 100,
+        status_formatter = nil, -- Use default
+        word_diff = false,
+        diff_opts = {internal = true}
+    }
+end
+
 function config.dashboard()
     vim.g.dashboard_default_executive = "telescope"
     vim.g.dashboard_custom_section = {
-        -- change_colorscheme = {
-        --     description = {" Scheme change              comma s c "},
-        --     command = "DashboardChangeColorscheme"
-        -- },
         find_frecency = {
             description = {" File frecency              comma f r "},
             command = "Telescope frecency"

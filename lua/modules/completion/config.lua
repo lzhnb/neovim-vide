@@ -2,6 +2,10 @@ local config = {}
 
 function config.nvim_lsp() require("modules.completion.lspconfig") end
 
+function config.saga()
+    vim.api.nvim_command("autocmd CursorHold * Lspsaga show_line_diagnostics")
+end
+
 function config.luasnip()
     require("luasnip").config.set_config {
         history = true,

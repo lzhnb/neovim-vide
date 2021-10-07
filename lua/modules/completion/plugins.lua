@@ -6,17 +6,20 @@ completion["L3MON4D3/LuaSnip"] = {
     after = "nvim-cmp",
     config = cfg.luasnip,
     requires = "rafamadriz/friendly-snippets",
+    disable = not active.LuaSnip,
 }
 
 completion["neovim/nvim-lspconfig"] = {
     opt = true,
     event = "BufReadPre",
     config = cfg.nvim_lsp,
+    disable = not active.lspconfig,
 }
 
 completion["kabouzeid/nvim-lspinstall"] = {
     opt = true,
     after = "nvim-lspconfig",
+    disable = not active.lspconfig,
 }
 
 completion["hrsh7th/nvim-cmp"] = {
@@ -30,7 +33,8 @@ completion["hrsh7th/nvim-cmp"] = {
         {"andersevenrud/compe-tmux", branch = "cmp", after = "cmp-nvim-lua"},
         {"hrsh7th/cmp-path", after = "compe-tmux"},
         {"f3fora/cmp-spell", after = "cmp-path"}
-    }
+    },
+    disable = not active.cmp,
 }
 
 

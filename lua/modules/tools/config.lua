@@ -3,7 +3,7 @@ local config = {}
 function config.vim_vista()
 	vim.g["vista#renderer#enable_icon"] = 1
 	vim.g.vista_disable_statusline = 1
-	vim.g.vista_default_executive = "coc"
+	vim.g.vista_default_executive = "lspconfig"
 	vim.g.vista_echo_cursor_strategy = "floating_win"
 	vim.g.vista_vimwiki_executive = "markdown"
 	vim.g.vista_executive_for = {
@@ -16,7 +16,7 @@ end
 function config.which_key()
 	local wk = require("which-key")
 
-	local normal_mappings = {
+	local normal_leader_mappings = {
 		-- file operation mapping
 		f = {
 			name = "file-telescope", -- optional group name
@@ -36,8 +36,6 @@ function config.which_key()
 			u = {":lua require('gitsigns').undo_stage_hunk()<CR>", "Undo Stage Hunk"},
 			r = {":lua require('gitsigns').reset_hunk()<CR>", "Undo Hunk"},
 			R = {":lua require('gitsigns').reset_buffer()<CR>", "Undo Buffer(file)"},
-            ["["] = {":lua require('gitsigns').next_hunk()<CR>", "Previous Hunk"},
-            ["]"] = {":lua require('gitsigns').prev_hunk()<CR>", "Next Hunk"},
             b = {":Telescope git_branches<CR>", "Checkout branch(Telescope)"},
             o = {":Telescope git_status<CR>", "Open changed file(Telescope)"},
             c = {":Telescope git_commits<CR>", "Checkout commit(Telescope)"},
@@ -54,7 +52,7 @@ function config.which_key()
 		v = {":Vista!!<CR>", "Tagbar"}, -- using vista to realize tag bar
 	}
 
-	local normal_opts = {
+	local normal_leader_opts = {
         mode = "n",          -- NORMAL mode
         prefix = "<leader>", -- `\` launch
         buffer = nil,        -- Global mappings. Specify a buffer number for buffer local mappings
@@ -63,7 +61,40 @@ function config.which_key()
         nowait = true,       -- use `nowait` when creating keymaps
     }
 
-	wk.register(normal_mappings, normal_opts)
+	wk.register(normal_leader_mappings, normal_leader_opts)
+
+    local normal_mappings = {
+        g = {
+            name = "Goto",
+            D = {":lua vim.lsp.buf.declaration()<CR>", "Goto declaration"},
+            d = {":lua vim.lsp.buf.definition()<CR>", "Goto definition"},
+            i = {":lua vim.lsp.buf.implementation()<CR>", "Goto implementation"},
+            r = {":lua vim.lsp.buf.references()<CR>", "Goto references"}
+        },
+        ["["] = {
+            name = "Previous",
+			c = {":lua require('gitsigns').next_hunk()<CR>", "Previous Hunk"},
+            d = {":lua vim.lsp.diagnostic.goto_prev()<CR>", "Previous diagnostic"},
+        },
+        ["]"] = {
+            name = "Next",
+			c = {":lua require('gitsigns').prev_hunk()<CR>", "Next Hunk"},
+            d = {":lua vim.lsp.diagnostic.goto_next()<CR>", "Next diagnostic"},
+        },
+        [" "] = {
+            name = "space",
+            f = {":lua vim.lsp.buf.formatting()<CR>", "Formatting"}
+        }
+    }
+    local normal_opts = {
+        mode = "n",
+        buffer = nil,
+        silent = true,
+        noremap = true,
+        nowait = true
+    }
+    wk.register(normal_mappings, normal_opts)
+
 end
 
 return config

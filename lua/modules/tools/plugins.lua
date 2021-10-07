@@ -17,7 +17,7 @@ tools["dstein64/vim-startuptime"] ={
 
 tools["folke/which-key.nvim"] = {
     opt = true,
-    keys = "\\",
+    event = "BufRead",
     config = cfg.which_key,
     disable = not active.which_key,
 }

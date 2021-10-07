@@ -22,7 +22,10 @@ local active = {
     which_key = true,
     startuptime = true,
     -- completion
-    coc = true,
+    LuaSnip = true,
+    lspconfig = true,
+    lspinstall = true,
+    cmp = true,    
 }
 
 return active

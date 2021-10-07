@@ -28,10 +28,10 @@ ui["lewis6991/gitsigns.nvim"] = {
     requires = {"nvim-lua/plenary.nvim", opt = true}
 }
 
-ui["romgrk/barbar.nvim"] = {
+ui["akinsho/bufferline.nvim"] = {
     opt = true,
-    event = {"BufRead", "BufNewFile"},
-    disable = not active.barbar,
+    event = "BufRead",
+    config = cfg.nvim_bufferline 
 }
 
 ui["hoob3rt/lualine.nvim"] = {

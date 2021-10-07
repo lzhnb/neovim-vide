@@ -22,6 +22,12 @@ completion["kabouzeid/nvim-lspinstall"] = {
     disable = not active.lspconfig,
 }
 
+completion["ray-x/lsp_signature.nvim"] = {
+    opt = true,
+    after = "nvim-lspconfig",
+    disable = not active.lspsignature,
+}
+
 completion["hrsh7th/nvim-cmp"] = {
     config = cfg.cmp,
     event = "InsertEnter",

@@ -2,11 +2,11 @@ local tools = {}
 local cfg = require("modules.tools.config")
 local active = require("modules.active")
 
-tools["liuchengxu/vista.vim"] = {
+tools["simrat39/symbols-outline.nvim"] = {
     opt = true,
-    cmd = "Vista",
-    config = cfg.vim_vista,
-    disable = not active.vista,
+    cmd = "SymbolsOutline",
+	config = cfg.symbols_outline,
+    disable = not active.symbols_outline,
 }
 
 tools["dstein64/vim-startuptime"] ={

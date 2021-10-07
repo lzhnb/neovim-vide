@@ -22,3 +22,5 @@ local disable_distribution_plugins = function()
     vim.g.loaded_netrwFileHandlers = 1
 end
 
+disable_distribution_plugins()
+

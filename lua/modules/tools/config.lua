@@ -1,16 +1,56 @@
 local config = {}
 
-function config.vim_vista()
-	vim.g["vista#renderer#enable_icon"] = 1
-	vim.g.vista_disable_statusline = 1
-	vim.g.vista_default_executive = "lspconfig"
-	vim.g.vista_echo_cursor_strategy = "floating_win"
-	vim.g.vista_vimwiki_executive = "markdown"
-	vim.g.vista_executive_for = {
-    	vimwiki =  "markdown",
-    	pandoc = "markdown",
-    	markdown = "toc",
-  	}
+function config.symbols_outline()
+	vim.g.symbols_outline = {
+		highlight_hovered_item = true,
+		show_guides = true,
+		auto_preview = true,
+		position = "right",
+		width = 25,
+		show_numbers = false,
+		show_relative_numbers = false,
+		show_symbol_details = true,
+		preview_bg_highlight = "Pmenu",
+		keymaps = { -- These keymaps can be a string or a table for multiple keys
+			close = {"<Esc>", "q"},
+			goto_location = "<Cr>",
+			focus_location = "o",
+			hover_symbol = "<C-space>",
+			toggle_preview = "K",
+			rename_symbol = "r",
+			code_actions = "a",
+		},
+		lsp_blacklist = {},
+		symbol_blacklist = {},
+		symbols = {
+			File = {icon = "", hl = "TSURI"},
+			Module = {icon = "", hl = "TSNamespace"},
+			Namespace = {icon = "", hl = "TSNamespace"},
+			Package = {icon = "", hl = "TSNamespace"},
+			Class = {icon = "C", hl = "TSType"},
+			Method = {icon = "ƒ", hl = "TSMethod"},
+			Property = {icon = "", hl = "TSMethod"},
+			Field = {icon = "", hl = "TSField"},
+			Constructor = {icon = "", hl = "TSConstructor"},
+			Enum = {icon = "ℰ", hl = "TSType"},
+			Interface = {icon = "ﰮ", hl = "TSType"},
+			Function = {icon = "", hl = "TSFunction"},
+			Variable = {icon = "", hl = "TSConstant"},
+			Constant = {icon = "", hl = "TSConstant"},
+			String = {icon = "A", hl = "TSString"},
+			Number = {icon = "#", hl = "TSNumber"},
+			Boolean = {icon = "⊨", hl = "TSBoolean"},
+			Array = {icon = "", hl = "TSConstant"},
+			Object = {icon = "⦿", hl = "TSType"},
+			Key = {icon = "K", hl = "TSType"},
+			Null = {icon = "NULL", hl = "TSType"},
+			EnumMember = {icon = "", hl = "TSField"},
+			Struct = {icon = "S", hl = "TSType"},
+			Event = {icon = "Z", hl = "TSType"},
+			Operator = {icon = "+", hl = "TSOperator"},
+			TypeParameter = {icon = "T", hl = "TSParameter"}
+		}
+	}
 end
 
 function config.which_key()
@@ -49,7 +89,7 @@ function config.which_key()
             S = {":PackerStatus<CR>", "Status"},
             u = {":PackerUpdate<CR>", "Update"}
         },
-		v = {":Vista!!<CR>", "Tagbar"}, -- using vista to realize tag bar
+        s = {":SymbolsOutline<CR>", "Symbols Outline"}, -- using vista to realize tag bar
 	}
 
 	local normal_leader_opts = {

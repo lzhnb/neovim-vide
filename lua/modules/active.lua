@@ -18,13 +18,14 @@ local active = {
     treesitter_textobjects = true,
     jedi = true,
     -- tools
-    vista = true,
+    symbols_outline = true,
     which_key = true,
     startuptime = true,
     -- completion
     LuaSnip = true,
     lspconfig = true,
     lspinstall = true,
+    lspsignature = true,
     cmp = true,    
 }
 

@@ -2,6 +2,37 @@ local completion = {}
 local cfg = require("modules.completion.config")
 local active = require("modules.active")
 
+completion["L3MON4D3/LuaSnip"] = {
+    after = "nvim-cmp",
+    config = cfg.luasnip,
+    requires = "rafamadriz/friendly-snippets",
+}
+
+completion["neovim/nvim-lspconfig"] = {
+    opt = true,
+    event = "BufReadPre",
+    config = cfg.nvim_lsp,
+}
+
+completion["kabouzeid/nvim-lspinstall"] = {
+    opt = true,
+    after = "nvim-lspconfig",
+}
+
+completion["hrsh7th/nvim-cmp"] = {
+    config = cfg.cmp,
+    event = "InsertEnter",
+    requires = {
+        {"saadparwaiz1/cmp_luasnip", after = "LuaSnip"},
+        {"hrsh7th/cmp-buffer", after = "cmp_luasnip"},
+        {"hrsh7th/cmp-nvim-lsp", after = "cmp-buffer"},
+        {"hrsh7th/cmp-nvim-lua", after = "cmp-nvim-lsp"},
+        {"andersevenrud/compe-tmux", branch = "cmp", after = "cmp-nvim-lua"},
+        {"hrsh7th/cmp-path", after = "compe-tmux"},
+        {"f3fora/cmp-spell", after = "cmp-path"}
+    }
+}
+
 completion["neoclide/coc.nvim"] = {
 	branch = "release",
     opt = true,

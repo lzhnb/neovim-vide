@@ -24,9 +24,9 @@ function config.nvim_treesitter()
 		ensure_installed = {
         	"bash",
         	"python",
+        	"lua",
         	"cpp",
         	"json",
-        	"lua",
         	"yaml"
     	},
   	}

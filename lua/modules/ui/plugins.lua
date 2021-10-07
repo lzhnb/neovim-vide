@@ -46,7 +46,7 @@ ui["hoob3rt/lualine.nvim"] = {
 ui["kyazdani42/nvim-tree.lua"] = {
   	opt = true,
     cmd = "NvimTreeToggle",
-  	config = cfg.nvim_tree,
+  	config = cfg.tree,
     disable = not active.tree,
 }
 

@@ -10,7 +10,7 @@ vimrc.load_options()
 -- loading plugins
 local pack = require("core.pack")
 pack.ensure_plugins()
-require("core.event")
+-- require("core.event")
 pack.load_compile()
 
 

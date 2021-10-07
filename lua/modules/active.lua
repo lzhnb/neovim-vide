@@ -4,8 +4,8 @@ local active = {
     onedark = true,
     web_devicons = true,
     dashboard = false,
-    bufferline = true,
     gitsigns = true,
+    bufferline = true,
     lualine = true,
     tree = true,
     -- editor
@@ -17,7 +17,6 @@ local active = {
     -- language
     treesitter = true,
     treesitter_textobjects = true,
-    jedi = true,
     -- tools
     symbols_outline = true,
     which_key = true,

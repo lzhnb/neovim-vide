@@ -1,6 +1,6 @@
 local config = {}
 
-function config.nvim_tree()
+function config.tree()
 	-- following options are the default
 	require("nvim-tree").setup {
 		quit_on_open = true, -- closes the tree when you open a file

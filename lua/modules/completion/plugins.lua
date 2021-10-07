@@ -19,7 +19,7 @@ completion["neovim/nvim-lspconfig"] = {
 completion["kabouzeid/nvim-lspinstall"] = {
     opt = true,
     after = "nvim-lspconfig",
-    disable = not active.lspconfig,
+    disable = not active.lspinstall,
 }
 
 completion["ray-x/lsp_signature.nvim"] = {

@@ -3,33 +3,35 @@ local autocmd = {}
 
 function autocmd.nvim_create_augroups(definitions)
     for group_name, definition in pairs(definitions) do
-        vim.api.nvim_command('augroup '..group_name)
-        vim.api.nvim_command('autocmd!')
+        vim.api.nvim_command("augroup "..group_name)
+        vim.api.nvim_command("autocmd!")
         for _, def in ipairs(definition) do
-            local command = table.concat(vim.tbl_flatten{'autocmd', def}, ' ')
+            local command = table.concat(vim.tbl_flatten{"autocmd", def}, " ")
             vim.api.nvim_command(command)
         end
-        vim.api.nvim_command('augroup END')
+        vim.api.nvim_command("augroup END")
     end
 end
 
 function autocmd.load_autocmds()
     local definitions = {
         packer = {
-            {"BufWritePost","*.lua","lua require('core.pack').auto_compile()"};
+            {
+                "BufWritePost", "*.lua", "lua require('core.pack').auto_compile()"
+            };
         },
         bufs = {
             -- Reload vim config automatically
             {"BufWritePost",[[$VIM_PATH/{*.vim,*.yaml,vimrc} nested source $MYVIMRC | redraw]]};
             -- Reload Vim script automatically if setlocal autoread
-            {"BufWritePost,FileWritePost","*.vim", [[nested if &l:autoread > 0 | source <afile> | echo 'source ' . bufname('%') | endif]]};
-            {"BufWritePre","/tmp/*","setlocal noundofile"};
-            {"BufWritePre","COMMIT_EDITMSG","setlocal noundofile"};
-            {"BufWritePre","MERGE_MSG","setlocal noundofile"};
-            {"BufWritePre","*.tmp","setlocal noundofile"};
-            {"BufWritePre","*.bak","setlocal noundofile"};
-            {"BufWritePre","*.tsx","lua vim.api.nvim_command('Format')"};
-            {"BufWritePre","*.go","lua require('internal.golines').golines_format()"};
+            {"BufWritePost,FileWritePost", "*.vim", [[nested if &l:autoread > 0 | source <afile> | echo 'source ' . bufname('%') | endif]]};
+            {"BufWritePre", "/tmp/*", "setlocal noundofile"};
+            {"BufWritePre", "COMMIT_EDITMSG", "setlocal noundofile"};
+            {"BufWritePre", "MERGE_MSG", "setlocal noundofile"};
+            {"BufWritePre", "*.tmp", "setlocal noundofile"};
+            {"BufWritePre", "*.bak", "setlocal noundofile"};
+            {"BufWritePre", "*.tsx", "lua vim.api.nvim_command('Format')"};
+            {"BufWritePre", "*.go", "lua require('internal.golines').golines_format()"};
         };
 
         wins = {
@@ -46,7 +48,7 @@ function autocmd.load_autocmds()
 
         ft = {
             {"FileType", "dashboard", "set showtabline=0 | autocmd WinLeave <buffer> set showtabline=2"};
-            {"BufNewFile,BufRead","*.toml"," setf toml"},
+            {"BufNewFile,BufRead", "*.toml", " setf toml"},
         };
     }
     autocmd.nvim_create_augroups(definitions)

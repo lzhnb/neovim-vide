@@ -85,6 +85,14 @@ function config.telescope()
 	end)
 end
 
+function config.comment()
+    require("nvim_comment").setup({
+        hook = function()
+            require("ts_context_commentstring.internal").update_commentstring()
+        end,
+    })
+end
+
 function config.toggleterm()
     require("toggleterm").setup {
         -- size can be a number or function which is passed the current terminal

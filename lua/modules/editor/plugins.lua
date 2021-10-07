@@ -13,12 +13,9 @@ editor["nvim-telescope/telescope.nvim"] = {
 }
 
 editor["terrortylor/nvim-comment"] = {
-    opt = false,
-    config = function() require("nvim_comment").setup({
-        hook = function()
-            require("ts_context_commentstring.internal").update_commentstring()
-        end,
-    }) end,
+    opt = true,
+    after = "nvim-ts-context-commentstring",
+    config = cfg.comment,
     disable = not active.comment,
 }
 
@@ -33,6 +30,13 @@ editor["akinsho/nvim-toggleterm.lua"] = {
     event = "BufRead",
     config = cfg.toggleterm,
     disable = not active.toggleterm,
+}
+
+editor["folke/todo-comments.nvim"] = {
+    opt = true,
+    after = "nvim-comment",
+    config = cfg.todo_comments,
+    disable = not active.todo_comments,
 }
 
 return editor

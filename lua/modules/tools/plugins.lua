@@ -9,10 +9,11 @@ tools["simrat39/symbols-outline.nvim"] = {
     disable = not active.symbols_outline,
 }
 
-tools["dstein64/vim-startuptime"] ={
+tools["folke/trouble.nvim"] = {
     opt = true,
-    cmd = "StartupTime",
-    disable = not active.startuptime,
+    cmd = {"Trouble", "TroubleToggle", "TroubleRefresh"},
+    config = cfg.trouble,
+    disable = not active.trouble,
 }
 
 tools["folke/which-key.nvim"] = {
@@ -20,6 +21,12 @@ tools["folke/which-key.nvim"] = {
     event = "BufRead",
     config = cfg.which_key,
     disable = not active.which_key,
+}
+
+tools["dstein64/vim-startuptime"] ={
+    opt = true,
+    cmd = "StartupTime",
+    disable = not active.startuptime,
 }
 
 return tools

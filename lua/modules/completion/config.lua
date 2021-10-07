@@ -123,18 +123,5 @@ function config.cmp()
     }
 end
 
-function config.coc()
-	-- coc extensions
-	vim.g.coc_global_extensions = {
-		"coc-snippets",
-		"coc-highlight",
-		"coc-sh",
-		-- "coc-pyright",
-		"coc-markdownlint",
-		"coc-cmake",
-		"coc-clangd",
-	}
-end
-
 return config
 

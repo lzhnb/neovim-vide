@@ -33,13 +33,6 @@ completion["hrsh7th/nvim-cmp"] = {
     }
 }
 
-completion["neoclide/coc.nvim"] = {
-	branch = "release",
-    opt = true,
-    event = "BufRead",
-	config = cfg.coc,
-    disable = not active.coc,
-}
 
 return completion
 

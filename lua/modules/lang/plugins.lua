@@ -15,13 +15,6 @@ lang["nvim-treesitter/nvim-treesitter-textobjects"] = {
     disable = not active.treesitter_textobjects,
 }
 
-lang["davidhalter/jedi-vim"] = {
-    opt = true,
-    ft = "python",
-    config = conf.jedi_vim,
-    disable = not active.jedi,
-}
-
 return lang
 
 

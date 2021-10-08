@@ -13,7 +13,6 @@ local active = {
     plenary = true,
     telescope = true,
     comment = true,
-    toggleterm = false,
     todo_comments = true,
     -- language
     treesitter = true,

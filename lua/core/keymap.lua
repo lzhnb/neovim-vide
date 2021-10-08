@@ -21,8 +21,6 @@ local keymap = {
     ["n|<A-7>"] = map(":BufferLineGoToBuffer 7<CR>"):with_noremap():with_silent(),
     ["n|<A-8>"] = map(":BufferLineGoToBuffer 8<CR>"):with_noremap():with_silent(),
     ["n|<A-9>"] = map(":BufferLineGoToBuffer 9<CR>"):with_noremap():with_silent(),
-    -- tree toggle
-    ["n|<C-N>"] = map(":NvimTreeToggle<CR>"):with_noremap():with_silent(),
     
     -- Insert mode
     ["i|<C-s>"] = map("<Esc>:w<CR>"),

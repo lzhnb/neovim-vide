@@ -20,13 +20,6 @@ editor["b3nj5m1n/kommentary"] = {
     disable = not active.comment,
 }
 
-editor["akinsho/nvim-toggleterm.lua"] = {
-    opt = true,
-    event = "BufRead",
-    config = cfg.toggleterm,
-    disable = not active.toggleterm,
-}
-
 editor["folke/todo-comments.nvim"] = {
     opt = true,
     after = "nvim-treesitter",

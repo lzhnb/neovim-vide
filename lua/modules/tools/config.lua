@@ -203,7 +203,8 @@ function config.which_key()
             u = {":PackerUpdate<CR>", "Update"}
         },
         s = {":SymbolsOutline<CR>", "Symbols Outline"}, -- using Symbols Outline to realize tag bar
-        t = {":TroubleToggle<CR>", "Trouble Toggle"}, -- show the trouble toggle
+        t = {":TroubleToggle<CR>", "Trouble Toggle"},   -- show the trouble toggle
+        n = {":NvimTreeToggle<CR>", "Nvim Tree"},       -- show explorer
     }
 
 	local normal_leader_opts = {
@@ -233,7 +234,7 @@ function config.which_key()
         },
         ["]"] = {
             name = "Next",
-			c = {":lua require('gitsigns').prev_hunk()<CR>", "Next Hunk"},
+			c = {":lua require('gitsigns').prev_ hunk()<CR>", "Next Hunk"},
             d = {":lua vim.lsp.diagnostic.goto_next()<CR>", "Next diagnostic"},
         },
         [" "] = {

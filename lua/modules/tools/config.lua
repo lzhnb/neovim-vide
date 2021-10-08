@@ -221,6 +221,7 @@ function config.which_key()
     local normal_mappings = {
         g = {
             name = "Goto",
+            g = {":1<CR>", "Goto first line"},
             D = {":lua vim.lsp.buf.declaration()<CR>", "Goto declaration"},
             d = {":lua vim.lsp.buf.definition()<CR>", "Goto definition"},
             i = {":lua vim.lsp.buf.implementation()<CR>", "Goto implementation"},

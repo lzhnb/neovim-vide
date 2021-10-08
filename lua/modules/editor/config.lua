@@ -3,8 +3,12 @@ local config = {}
 function config.telescope()
 	if not packer_plugins["plenary.nvim"].loaded then
     	vim.cmd [[packadd plenary.nvim]]
-  	    print("open plenary")
     end	
+
+    if not packer_plugins["popup.nvim"].loaded then
+        vim.cmd [[packadd popup.nvim]]
+    end
+
     telescope.setup {
 		defaults = {
 			vimgrep_arguments = {

@@ -50,6 +50,13 @@ ui["kyazdani42/nvim-tree.lua"] = {
     disable = not active.tree,
 }
 
+ui["lukas-reineke/indent-blankline.nvim"] = {
+    opt = true,
+    event = "BufRead",
+	config = cfg.indent_blankline,
+    disable = not active.indent_blankline,
+}
+
 return ui
 
 

@@ -74,7 +74,6 @@ function config.lualine()
 			lualine_b = {
 				{"branch"},
 				{"diff"},
-				{"vim.b.vista_nearest_method_or_function"},
 			},
             lualine_c = {"filename"},
 			lualine_y = {"progress"},
@@ -172,6 +171,25 @@ function config.dashboard()
             command = "Telescope live_grep"
         }
     }
+end
+
+function config.indent_blankline()
+    require("indent_blankline").setup {
+        char = "▏",
+        show_first_indent_level = true,
+        show_trailing_blankline_indent = false,
+        show_current_context = true,
+        filetype_exclude = {
+            "help",
+            "terminal",
+            "dashboard",
+            "packer",
+            "lspinfo",
+            "TelescopePrompt",
+            "TelescopeResults",
+        },
+        buftype_exclude = { "terminal" },
+   }
 end
 
 return config

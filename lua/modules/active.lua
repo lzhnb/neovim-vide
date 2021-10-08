@@ -8,6 +8,7 @@ local active = {
     bufferline = true,
     lualine = true,
     tree = true,
+    indent_blankline = true,
     -- editor
     plenary = true,
     telescope = true,

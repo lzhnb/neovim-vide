@@ -7,6 +7,7 @@ editor["nvim-telescope/telescope.nvim"] = {
     cmd = "Telescope",
     config = cfg.telescope,
     requires = {
+        {"nvim-lua/plenary.nvim", opt = true},
         {"nvim-lua/plenary.nvim", opt = true}
     },
     disable = not active.telescope,

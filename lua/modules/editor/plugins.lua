@@ -8,22 +8,16 @@ editor["nvim-telescope/telescope.nvim"] = {
     config = cfg.telescope,
     requires = {
         {"nvim-lua/plenary.nvim", opt = true},
-        {"nvim-lua/plenary.nvim", opt = true}
+        {"nvim-lua/popup.nvim", opt = true}
     },
     disable = not active.telescope,
 }
 
-editor["terrortylor/nvim-comment"] = {
-    opt = true,
-    after = "nvim-ts-context-commentstring",
-    config = cfg.comment,
-    disable = not active.comment,
-}
-
-editor["JoosepAlviste/nvim-ts-context-commentstring"] = {
+editor["b3nj5m1n/kommentary"] = {
     opt = true,
     after = "nvim-treesitter",
-    disable = not active.ts_context_commentstring,
+    config = cfg.comment,
+    disable = not active.comment,
 }
 
 editor["akinsho/nvim-toggleterm.lua"] = {
@@ -35,7 +29,7 @@ editor["akinsho/nvim-toggleterm.lua"] = {
 
 editor["folke/todo-comments.nvim"] = {
     opt = true,
-    after = "nvim-comment",
+    after = "nvim-treesitter",
     config = cfg.todo_comments,
     disable = not active.todo_comments,
 }

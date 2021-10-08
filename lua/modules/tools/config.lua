@@ -173,10 +173,9 @@ function config.which_key()
 			g = {":Telescope live_grep<CR>", "live grep"},         -- grep using telescope
 			h = {":Telescope help_tags<CR>", "Telescope healp"},   -- telescope help
 			n = {":enew<CR>", "New File"},                         -- create a new empty buffer
-			["1"] = "which_key_ignore",                            -- special label to hide it in the popup
 		},
         c= {
-            name = "comments",
+            name = "TODO comments",
             l = {":TodoLocList<CR>", "Use location list to show"},
             q = {":TodoQuickFix<CR>", "Use quickfix list to show"},
             t = {":TodoTrouble<CR>", "Use trouble list to show"},
@@ -220,12 +219,12 @@ function config.which_key()
 
     local normal_mappings = {
         g = {
-            name = "Goto",
+            name = "Goto/Comment",
             g = {":1<CR>", "Goto first line"},
             D = {":lua vim.lsp.buf.declaration()<CR>", "Goto declaration"},
             d = {":lua vim.lsp.buf.definition()<CR>", "Goto definition"},
             i = {":lua vim.lsp.buf.implementation()<CR>", "Goto implementation"},
-            r = {":lua vim.lsp.buf.references()<CR>", "Goto references"}
+            r = {":lua vim.lsp.buf.references()<CR>", "Goto references"},
         },
         ["["] = {
             name = "Previous",

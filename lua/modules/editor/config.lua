@@ -90,11 +90,9 @@ function config.telescope()
 end
 
 function config.comment()
-    require("nvim_comment").setup({
-        hook = function()
-            require("ts_context_commentstring.internal").update_commentstring()
-        end,
-    })
+require("kommentary.config").configure_language({"c", "rust"}, {
+    prefer_single_line_comments = true,
+})
 end
 
 function config.toggleterm()

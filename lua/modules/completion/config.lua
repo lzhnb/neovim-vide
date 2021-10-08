@@ -127,5 +127,14 @@ function config.cmp()
     }
 end
 
+function config.autopairs()
+    require("nvim-autopairs").setup {fast_wrap = {}}
+    require("nvim-autopairs.completion.cmp").setup({
+        map_cr = true,
+        map_complete = true,
+        auto_select = true
+    })
+end
+
 return config
 

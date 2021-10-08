@@ -43,6 +43,10 @@ completion["hrsh7th/nvim-cmp"] = {
     disable = not active.cmp,
 }
 
+completion["windwp/nvim-autopairs"] = {
+    after = "nvim-cmp",
+    config = cfg.autopairs
+}
 
 return completion
 

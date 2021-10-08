@@ -7,7 +7,12 @@ function config.saga()
 end
 
 function config.luasnip()
-    require("luasnip").config.set_config {
+	local present, luasnip = pcall(require, "luasnip")
+    if not present then
+        print("can not load the luasnip")
+        return
+    end
+    luasnip.config.set_config {
         history = true,
         updateevents = "TextChanged,TextChangedI"
     }
@@ -19,7 +24,11 @@ function config.cmp()
         return vim.api.nvim_replace_termcodes(str, true, true, true)
     end
 
-    local cmp = require("cmp")
+	local present, cmp = pcall(require, "cmp")
+    if not present then
+        print("can not load the cmp")
+        return
+    end
     cmp.setup {
         formatting = {
             format = function(entry, vim_item)
@@ -128,7 +137,12 @@ function config.cmp()
 end
 
 function config.autopairs()
-    require("nvim-autopairs").setup {fast_wrap = {}}
+	local present, autopairs = pcall(require, "nvim-autopairs")
+    if not present then
+        print("can not load the autopairs")
+        return
+    end
+    autopairs.setup {fast_wrap = {}}
     require("nvim-autopairs.completion.cmp").setup({
         map_cr = true,
         map_complete = true,

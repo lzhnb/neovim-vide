@@ -56,7 +56,12 @@ end
 
 -- TODO: read
 function config.trouble()
-    require("trouble").setup {
+	local present, trouble = pcall(require, "trouble")
+    if not present then
+        print("can not load the trouble")
+        return
+    end
+    trouble.setup {
         position = "bottom", -- position of the list can be: bottom, top, left, right
         height = 10, -- height of the trouble list when position is top or bottom
         width = 50, -- width of the list when position is left or right
@@ -103,7 +108,12 @@ function config.trouble()
 end
 
 function config.todo_comments()	
-	require("todo-comments").setup {  
+	local present, todo_comments = pcall(require, "todo-comments")
+    if not present then
+        print("can not load the todo-comments")
+        return
+    end
+	todo_comments.setup {  
 		signs = true, -- show icons in the signs column
 	    sign_priority = 8, -- sign priority
 	    -- keywords recognized as todo comments
@@ -161,7 +171,11 @@ function config.todo_comments()
 end
 
 function config.which_key()
-	local wk = require("which-key")
+	local present, wk = pcall(require, "which-key")
+    if not present then
+        print("can not load the which-key")
+        return
+    end
 
 	local normal_leader_mappings = {
 		-- file operation mapping

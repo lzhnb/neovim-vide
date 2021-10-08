@@ -1,7 +1,13 @@
 local config = {}
 
 function config.telescope()
-	if not packer_plugins["plenary.nvim"].loaded then
+	local present, telescope = pcall(require, "telescope")
+    if not present then
+        print("can not load the telescope")
+        return
+    end
+	
+    if not packer_plugins["plenary.nvim"].loaded then
     	vim.cmd [[packadd plenary.nvim]]
     end	
 

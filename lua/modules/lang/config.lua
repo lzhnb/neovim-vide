@@ -1,11 +1,15 @@
 local config = {}
 
 function config.nvim_treesitter()
-    vim.api.nvim_command("set foldmethod=manual")
+	local present, nvim_treesitter_configs = pcall(require, "nvim-treesitter.configs")
+    if not present then
+        print("can not load the nvim_treesitter")
+        return
+    end
   	-- auto fold the code
     -- vim.api.nvim_command("set foldmethod=expr")
   	-- vim.api.nvim_command("set foldexpr=nvim_treesitter#foldexpr()")
-  	require("nvim-treesitter.configs").setup {
+  	nvim_treesitter_configs.setup {
     	ensure_installed = "maintained",
     	highlight = {
       		enable = true,

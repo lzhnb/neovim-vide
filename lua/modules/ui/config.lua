@@ -1,8 +1,13 @@
 local config = {}
 
 function config.tree()
-	-- following options are the default
-	require("nvim-tree").setup {
+	local present, tree = pcall(require, "nvim-tree")
+    if not present then
+        print("can not load the nvim-tree")
+        return
+    end
+    -- following options are the default
+	tree.setup {
 		quit_on_open = true, -- closes the tree when you open a file
         tree_indent_markers = true, -- this option shows indent markers when folders are open
         tree_hide_dotfiles = true, -- this option hides files and folders starting with a dot
@@ -63,7 +68,12 @@ function config.tree()
 end
 
 function config.lualine()
-	require("lualine").setup {
+	local present, lualine = pcall(require, "lualine")
+    if not present then
+        print("can not load the lualine")
+        return
+    end
+    lualine.setup {
 		options = {
 			theme = "onedark",
 			icons_enabled = true,
@@ -93,7 +103,12 @@ function config.lualine()
 end
 
 function config.bufferline()
-    require("bufferline").setup {
+	local present, bufferline = pcall(require, "bufferline")
+    if not present then
+        print("can not load the bufferline")
+        return
+    end
+    bufferline.setup {
         options = {
             modified_icon = "✥",
             buffer_close_icon = "",
@@ -121,10 +136,15 @@ function config.bufferline()
 end
 
 function config.gitsigns()
+	local present, gitsigns = pcall(require, "gitsigns")
+    if not present then
+        print("can not load the gitsigns")
+        return
+    end
     if not packer_plugins["plenary.nvim"].loaded then
         vim.cmd [[packadd plenary.nvim]]
     end
-    require("gitsigns").setup {
+    gitsigns.setup {
         signs = {
             add = {hl = "GitGutterAdd", text = "▋"},
             change = {hl = "GitGutterChange", text = "▋"},
@@ -174,7 +194,12 @@ function config.dashboard()
 end
 
 function config.indent_blankline()
-    require("indent_blankline").setup {
+	local present, indent_blankline = pcall(require, "indent_blankline")
+    if not present then
+        print("can not load the indent_blankline")
+        return
+    end
+    indent_blankline.setup {
         char = "▏",
         show_first_indent_level = true,
         show_trailing_blankline_indent = false,

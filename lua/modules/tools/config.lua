@@ -6,7 +6,7 @@ function config.symbols_outline()
 		highlight_hovered_item = true,
 		show_guides = true,
 		auto_preview = true,
-		position = "right",
+		position = "left",
 		width = 25,
 		show_numbers = false,
 		show_relative_numbers = false,
